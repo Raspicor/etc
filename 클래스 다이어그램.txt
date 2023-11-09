@@ -1,0 +1,104 @@
+모델 정의
+   Chat {
+        string chat_content 
+        date chat_date
+        string caht_uid 
+        string chat_sender
+        string chat_type
+        string chat_passing_id (RE, FW 메시지 id)
+        chatroom chatroom
+   }
+    ChatRoom {
+        string chatroom_id
+        string chatroom_type
+        string create_user
+        user users
+    }
+    User {
+        string user_id
+        string user_status
+        string user_pwd
+        string user_name
+        string tenant_code
+        string dept_code
+        string user_intel 내선 번호
+        string user_mtel 핸드폰 번호
+        string user_email
+        string user_image_url
+    }
+    Dept {
+        string dept_code
+        string dept_name
+        string tenant_code
+        string upper_dept_code
+    }
+    Group {
+        string group_id
+        string group_name
+        string user_id
+        string upper_group_id
+    }
+    Favorite {
+        string group_id
+        string favorite_user_id target(favorite) user id
+        string id favorite id
+    }
+    InterfaceSetting {
+        string user_id
+        string device_id
+    }
+    Message {
+        User message_sender
+        User message_receiver
+        string message_content
+        string($date_time) message_date
+        boolean message_favorite
+        boolean message_read
+        string message_passing_id
+        string message_type (RE(Reply) or FW(Forwarding))
+    }
+    Setting {
+        string user_id
+        JSON setting 
+    }
+    Tenant {
+        string tenant_code
+        string tenant_name
+        string tenant_inf_domain
+    }
+
+Usecase
+    1. 로그인
+        1. data 안에 만들어서 구현, validation까지
+        2. 로그인 Request
+        3. 로그인 정보 Session 및 DB 저장
+        4. 토큰 쳐내고 싶어요
+    2. 유저
+        1. 사용자 목록 조회
+    3. 채팅방
+        1. 방 생성
+        2. 방 나가기
+    4. 채팅 메세지
+        1. 웹소켓통신 - 플러터 내부 DB 저장(Sqflite)
+        2. 메세지 보내기
+        3. 메세지 삭제(사용자 본인 화면에서만)
+
+Repository
+    1. Socket
+    2. Rest
+    3. DataBase
+    4. Auth
+    5. Remote
+
+Data Source
+    1. 내부 DB 
+    2. Rest API
+
+User - 메세지 전송 - Provider.onEvent()안에서 - Usecase의 메세지 전송 Repo 호출 - Repo 내에서 메세지에 대한 Post 로직 처리
+- Status Code에 따라 결과 Return - Status Code == 200 - 소켓에서 메세지 브로드 캐스팅
+
+
+
+
+
+
