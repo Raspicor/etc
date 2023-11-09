@@ -14,7 +14,7 @@ Clean Architecture
   Domain
     Usecase - A 기능의 어플리케이션 비즈니스 룰 담당
               3. A 기능의 실행을 위해 필요한 Entity들을 통해 최종 결정
-              4. A 기능이 실행되고 나면 이를 Repository를 실행하고 이를 반영
+              4. A 기능이 실행되고 나면 Repository를 실행하고 이를 반영
     Entities - 핵심 기능 룰을 담은 Enterprise Business Rule 담당
   Data
     Repository
