@@ -14,7 +14,7 @@ Clean Architecture
   Domain
     Usecase - A 기능의 어플리케이션 비즈니스 룰 담당
               3. A 기능의 실행을 위해 필요한 Entity들을 통해 최종 결정
-              4. A 기능이 실행되고 나면 이를 Repository를 실행하고 이를 반영
+              4. A 기능이 실행되고 나면 Repository를 실행하고 이를 반영
     Entities - 핵심 기능 룰을 담은 Enterprise Business Rule 담당
   Data
     Repository
@@ -73,6 +73,7 @@ path_provider - 파일 저장 가능
 - Shared Preference : 로그인 정보 등 .. 간단 정보
 - SQlite : 채팅 정보 저장 (텍스트)
 - path_provider : 파일 전송시 이용예정 ....
+<<<<<<< HEAD
 
 Data 
   Rest API 통신 Repo
@@ -89,3 +90,5 @@ Domain
 Presentation
   View - ViewModel에 있는 Data가 바인딩되어 UI에 표현
   ViewModel - Domain 단의 DTO를 조작
+=======
+>>>>>>> 34df9a95c0808813c34c111c662fa9c771eae655
