@@ -73,3 +73,19 @@ path_provider - 파일 저장 가능
 - Shared Preference : 로그인 정보 등 .. 간단 정보
 - SQlite : 채팅 정보 저장 (텍스트)
 - path_provider : 파일 전송시 이용예정 ....
+
+Data 
+  Rest API 통신 Repo
+  Socket 통신 Repo
+  로컬 DB 통신 Repo - Entity 객체
+  통신이 되는 Repo에서 가져온 데이터를 담는 DTO (원형 데이터) - validation만 해줌
+
+Domain
+  DTO - Usecase를 통해 매핑된 Data를 담음
+  Usecase - IRepository를 호출해 가져온 Data 단의 DTO를 Domain 단의 DTO에 매핑
+          - IUsecase를 선언할 수 있음.
+  IRepository - 각 환경에 따라 유연하게 대처할 수 있기 위해 구현
+
+Presentation
+  View - ViewModel에 있는 Data가 바인딩되어 UI에 표현
+  ViewModel - Domain 단의 DTO를 조작
