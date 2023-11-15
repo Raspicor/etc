@@ -81,7 +81,7 @@ Data
   통신이 되는 Repo에서 가져온 데이터를 담는 DTO (원형 데이터) - validation만 해줌
 
 Domain
-  DTO - Usecase를 통해 매핑된 Data를 담음
+  Model - Usecase를 통해 매핑된 Data를 담음
   Usecase - IRepository를 호출해 가져온 Data 단의 DTO를 Domain 단의 DTO에 매핑
           - IUsecase를 선언할 수 있음.
   IRepository - 각 환경에 따라 유연하게 대처할 수 있기 위해 구현
