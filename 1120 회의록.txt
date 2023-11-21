@@ -10,7 +10,7 @@ SessionInfo - inputLoginInfo 수정
         4. 조직도 화면
         5. 대화 목록 화면
 
-화면과 화면 사이의 구조도 필요 - 구조도 작성 후, 라우팅 생각(문자열로 Path 구조 생성) - 전자동의서 참고
+화면과 화면 사이의 구조도 필요 - 구조도 작성 후, 라우팅 생각(문자열로 Path 구조 생성) - ezConsent.FlutterApp 참고
 이전 창 남기는건 push
 안 남기면 pushReplacement
 1. 초기 로그인 화면 = '/'
@@ -22,3 +22,5 @@ SessionInfo - inputLoginInfo 수정
 
 5. 설정 화면 = '/options'
 6. 채팅방 화면 = '/chatRoom/:chatRoomId'
+
+- 화면 식별할 수 있도록 최소한의 빈껍데기 뷰를 만들어 화면 라우팅 작업 진행
